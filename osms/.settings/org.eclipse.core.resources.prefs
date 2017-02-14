@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//WebContent/login.jsp=UTF-8
+encoding//src/com/osms/globle/Constants.java=UTF-8
+encoding//src/com/osms/globle/Globle.java=UTF-8
+encoding//src/com/osms/listener/OnLineListener.java=UTF-8
+encoding//src/com/osms/listener/SessionListener.java=UTF-8
+encoding//src/com/osms/utils/UserAccessRecorder.java=UTF-8
