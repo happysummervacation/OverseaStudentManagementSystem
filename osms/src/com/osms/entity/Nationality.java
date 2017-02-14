@@ -15,37 +15,50 @@ public class Nationality implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private int nationalityId;//国籍编号
-	private String nationalityName;//国籍名称
-	
+	private String nationalityChineseName;//国籍中文名称
+	private String nationalityEnglishName;//国家英文名
 	
 	public Nationality()
 	{
 		
 	}
-	
-	
-	public Nationality(int nationalityId, String nationalityName) {
+
+	public Nationality(int nationalityId, String nationalityChineseName, String nationalityEnglishName) {
 		this.nationalityId = nationalityId;
-		this.nationalityName = nationalityName;
+		this.nationalityChineseName = nationalityChineseName;
+		this.nationalityEnglishName = nationalityEnglishName;
 	}
 
 	public int getNationalityId() {
 		return nationalityId;
 	}
+
 	public void setNationalityId(int nationalityId) {
 		this.nationalityId = nationalityId;
 	}
-	public String getNationalityName() {
-		return nationalityName;
-	}
-	public void setNationalityName(String nationalityName) {
-		this.nationalityName = nationalityName;
+
+	public String getNationalityChineseName() {
+		return nationalityChineseName;
 	}
 
+	public void setNationalityChineseName(String nationalityChineseName) {
+		this.nationalityChineseName = nationalityChineseName;
+	}
+
+	public String getNationalityEnglishName() {
+		return nationalityEnglishName;
+	}
+
+	public void setNationalityEnglishName(String nationalityEnglishName) {
+		this.nationalityEnglishName = nationalityEnglishName;
+	}
 
 	@Override
 	public String toString() {
-		return "Nationality [nationalityId=" + nationalityId + ", nationalityName=" + nationalityName + "]";
+		return "Nationality [nationalityId=" + nationalityId + ", nationalityChineseName=" + nationalityChineseName
+				+ ", nationalityEnglishName=" + nationalityEnglishName + "]";
 	}
+	
+	
 	
 }

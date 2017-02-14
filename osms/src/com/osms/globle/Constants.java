@@ -66,14 +66,14 @@ public class Constants {
 	 */
 	public static String ONLINE_USERS = "com.osms.listener.onLineListener.Map";
 	
-//	/**
-//	 * 用户类别配置
-//	 */
-//	public static String STUDENT="4";
-//	
-//	public static String TEACHER="3";
-//	
-//	public static String ADMIN="2";
-//	
-//	public static String ROOT="1";
+	/**
+	 * 用户类别配置
+	 */
+	public static String STUDENT="4";
+	
+	public static String TEACHER="3";
+	
+	public static String ADMIN="2";
+	
+	public static String ROOT="1";
 }
