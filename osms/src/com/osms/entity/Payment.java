@@ -15,20 +15,20 @@ public class Payment implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private int paymentId;//缴费单Id
-	private int userId;//缴费人Id
-	private int paymentTypeId;//缴费类型Id
-	private double money;//金额
-	private Date payTime;//缴费时间
-	private boolean isDone;//是否完成本次缴费单
-	private String description;//描述
-	private int status;//状态
+	private int paymentId=0;//缴费单Id
+	private int userId=0;//缴费人Id
+	private int paymentTypeId=0;//缴费类型Id
+	private double money=0;//金额
+	private Date payTime=null;//缴费时间
+	private boolean isDone=false;//是否完成本次缴费单
+	private String description=null;//描述
+	private int status=0;//状态
 	
 	/**
 	 * 聚合对象
 	 */
-	private Users user;//缴费人对象
-	private PaymentType paymentType;//缴费类型对象
+	private Users user=null;//缴费人对象
+	private PaymentType paymentType=null;//缴费类型对象
 	
 	
 	public Payment()

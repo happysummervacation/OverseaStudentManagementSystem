@@ -14,17 +14,17 @@ public class Users implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private int userId;//用户ID
-	private String fullName;//用户姓名
-	private boolean gender;//性别
-	private int typeId;//用户类型Id
-	private String phone;//在华手机号
-	private String email;//邮箱
-	private String password;//密码
-	private int foreignIdentityId;//海外身份ID
-	private int visaId;//签证ID
-	private int schoolRollId;//学籍ID
-	private int status;//状态
+	private int userId=0;//用户ID
+	private String fullName=null;//用户姓名
+	private boolean gender=false;//性别
+	private int typeId=0;//用户类型Id
+	private String phone=null;//在华手机号
+	private String email=null;//邮箱
+	private String password=null;//密码
+	private int foreignIdentityId=0;//海外身份ID
+	private int visaId=0;//签证ID
+	private int schoolRollId=0;//学籍ID
+	private int status=0;//状态
 	
 	/**
 	 * 包含
@@ -34,10 +34,10 @@ public class Users implements Serializable{
 	 * 学籍类
 	 */
 	
-	private UserType userType;//用户类型配置类对象
-	private ForeignIdentity foreignIdentity;//国外身份类对象
-	private Visa visa;//签证类对象
-	private SchoolRoll schoolRoll;//学籍信息类对象
+	private UserType userType=null;//用户类型配置类对象
+	private ForeignIdentity foreignIdentity=null;//国外身份类对象
+	private Visa visa=null;//签证类对象
+	private SchoolRoll schoolRoll=null;//学籍信息类对象
 	
 	public Users()
 	{

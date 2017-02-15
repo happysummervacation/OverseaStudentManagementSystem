@@ -16,21 +16,21 @@ public class ForeignIdentity implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	
-	private int foreignIdentityId;//国外身份ID
-	private int nationalityId;//国籍ID
-	private String birthplace;//出生地
-	private String homeAddress;//家庭住址
-	private String phone;//国外联系电话
-	private int educationId;//学历ID
-	private boolean isMarried;//是否结婚
-	private Date birthday;//出生日期
+	private int foreignIdentityId=0;//国外身份ID
+	private int nationalityId=0;//国籍ID
+	private String birthplace=null;//出生地
+	private String homeAddress=null;//家庭住址
+	private String phone=null;//国外联系电话
+	private int educationId=0;//学历ID
+	private boolean isMarried=false;//是否结婚
+	private Date birthday=null;//出生日期
 	
 	
 	/**
 	 * 添加配置类
 	 */
-	private Nationality nationality;//国籍类对象
-	private EducationType educationType;//学历类对象
+	private Nationality nationality=null;//国籍类对象
+	private EducationType educationType=null;//学历类对象
 	
 	public ForeignIdentity()
 	{

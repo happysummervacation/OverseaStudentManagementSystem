@@ -15,8 +15,8 @@ public class UserType implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private int typeId;//用户类型ID
-	private String typeName;//用户类型名称
+	private int typeId=0;//用户类型ID
+	private String typeName=null;//用户类型名称
 	
 	
 	public UserType()

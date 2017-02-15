@@ -14,8 +14,8 @@ public class Status implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private int statusId;//×´Ì¬ID
-	private String statusName;//×´Ì¬Ãû³Æ
+	private int statusId=0;//×´Ì¬ID
+	private String statusName=null;//×´Ì¬Ãû³Æ
 	
 	public Status()
 	{

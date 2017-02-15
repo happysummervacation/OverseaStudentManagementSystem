@@ -1,5 +1,6 @@
 package com.osms.dao;
 
+import java.sql.Connection;
 import java.util.List;
 
 import com.osms.entity.Users;
@@ -25,17 +26,15 @@ public interface UserDao {
 	 */
 	public List<Users> getUsers(int typeId);
 	
-	/**
-	 * 保存一个学生用户对象
-	 * @param user
-	 */
-	public void saveStudent(Users user);
 	
 	/**
-	 * 保存一个教师用户对象
+	 * 事务提交
+	 * 保存一个用户对象
 	 * @param user
+	 * @param conn
+	 * @return
 	 */
-	public void saveTeacher(Users user);
+	public int save(Users user, Connection conn);
 	
 	/**
 	 * 更新留学生信息

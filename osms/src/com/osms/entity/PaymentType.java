@@ -14,8 +14,8 @@ public class PaymentType implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private int paymentTypeId;//缴费类别ID
-	private String paymentTypeName;//缴费类别名称
+	private int paymentTypeId=0;//缴费类别ID
+	private String paymentTypeName=null;//缴费类别名称
 	
 	
 	public PaymentType()

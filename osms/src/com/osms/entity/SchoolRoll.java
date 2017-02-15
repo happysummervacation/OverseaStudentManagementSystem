@@ -16,264 +16,246 @@ public class SchoolRoll implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private int schoolRollId;//学籍Id
-	private int majorId;//专业ID
-	private int periodId;//学习期限id
-	private String workOrStudyPlace;//工作或学习单位
-	private String studentType;//学生类别,留学生
-	private String studentNum;//学号
-	private int classId;//班级ID
-	private int academyId;//学院ID
-	private String dormitoryNum;//宿舍号
-	private String studentCardNum;//学生卡卡号
-	private Date comeTime;//来校时间
-	private Date leaveTime;//离校时间
-	private int statusId;//状态ID
+	private int schoolRollId=0;//学籍Id
+	private int periodId=0;//学习期限id
+	private String workOrStudyPlace=null;//工作或学习单位
+	private String schoolRollName=null;//职业类型，留学生或者教师职称
+	private String cardNum=null;//工号、学生卡号、学号是同一个
+	private int amcId=0;//学院专业班级表ID
+	private String dormitoryNum=null;//宿舍号
+	private Date comeTime=null;//来校时间
+	private Date leaveTime=null;//离校时间
+	private int statusId=0;//状态ID
 	
 	/**
 	 * 包含聚合类对象
 	 */
-	private Major major;//专业配置类对象
-	private StudyPeriod studyPeriod;//学习期限配置类对象
-	private Class CClass;//班级配置类对象
-	private Academy academy;//学院配置类对象
-	private Status status;//在校状态对象
+	private AMC amc=null;//学院专业班级集合表对象
+	private StudyPeriod studyPeriod=null;//学习期限配置类对象
+	private Status status=null;//在校状态对象
 	
 	
 	public SchoolRoll()
 	{
 		
 	}
-	
+
+
 	/**
-	 * 聚合类对象构造函数
-	 * @param major
+	 * 私有变量
+	 * @param schoolRollId
+	 * @param periodId
+	 * @param workOrStudyPlace
+	 * @param schoolRollName
+	 * @param cardNum
+	 * @param amcId
+	 * @param dormitoryNum
+	 * @param comeTime
+	 * @param leaveTime
+	 * @param statusId
+	 */
+	public SchoolRoll(int schoolRollId, int periodId, String workOrStudyPlace, String schoolRollName, String cardNum,
+			int amcId, String dormitoryNum, Date comeTime, Date leaveTime, int statusId) {
+		this.schoolRollId = schoolRollId;
+		this.periodId = periodId;
+		this.workOrStudyPlace = workOrStudyPlace;
+		this.schoolRollName = schoolRollName;
+		this.cardNum = cardNum;
+		this.amcId = amcId;
+		this.dormitoryNum = dormitoryNum;
+		this.comeTime = comeTime;
+		this.leaveTime = leaveTime;
+		this.statusId = statusId;
+	}
+
+
+	/**
+	 * 聚合对象
+	 * @param amc
 	 * @param studyPeriod
-	 * @param cClass
-	 * @param academy
 	 * @param status
 	 */
-	public SchoolRoll(Major major, StudyPeriod studyPeriod, Class cClass, Academy academy, Status status) {
-		this.major = major;
+	public SchoolRoll(AMC amc, StudyPeriod studyPeriod, Status status) {
+		this.amc = amc;
 		this.studyPeriod = studyPeriod;
-		CClass = cClass;
-		this.academy = academy;
 		this.status = status;
 	}
 
 
 	/**
-	 * 私有成员变量构造函数
-	 * @param schoolRollId
-	 * @param majorId
-	 * @param periodId
-	 * @param workOrStudyPlace
-	 * @param studentType
-	 * @param studentNum
-	 * @param classId
-	 * @param academyId
-	 * @param dormitoryNum
-	 * @param studentCardNum
-	 * @param comeTime
-	 * @param leaveTime
-	 * @param statusId
-	 */
-	
-	public SchoolRoll(int schoolRollId, int majorId, int periodId, String workOrStudyPlace, String studentType,
-			String studentNum, int classId, int academyId, String dormitoryNum, String studentCardNum, Date comeTime,
-			Date leaveTime, int statusId) {
-		this.schoolRollId = schoolRollId;
-		this.majorId = majorId;
-		this.periodId = periodId;
-		this.workOrStudyPlace = workOrStudyPlace;
-		this.studentType = studentType;
-		this.studentNum = studentNum;
-		this.classId = classId;
-		this.academyId = academyId;
-		this.dormitoryNum = dormitoryNum;
-		this.studentCardNum = studentCardNum;
-		this.comeTime = comeTime;
-		this.leaveTime = leaveTime;
-		this.statusId = statusId;
-	}
-	
-	
-	/**
-	 * 构造函数
-	 * 私有成员
+	 * 私有变量
 	 * 聚合对象
 	 * @param schoolRollId
-	 * @param majorId
 	 * @param periodId
 	 * @param workOrStudyPlace
-	 * @param studentType
-	 * @param studentNum
-	 * @param classId
-	 * @param academyId
+	 * @param schoolRollName
+	 * @param cardNum
+	 * @param amcId
 	 * @param dormitoryNum
-	 * @param studentCardNum
 	 * @param comeTime
 	 * @param leaveTime
 	 * @param statusId
-	 * @param major
+	 * @param amc
 	 * @param studyPeriod
-	 * @param cClass
-	 * @param academy
 	 * @param status
 	 */
-	public SchoolRoll(int schoolRollId, int majorId, int periodId, String workOrStudyPlace, String studentType,
-			String studentNum, int classId, int academyId, String dormitoryNum, String studentCardNum, Date comeTime,
-			Date leaveTime, int statusId, Major major, StudyPeriod studyPeriod, Class cClass, Academy academy,
-			Status status) {
+	public SchoolRoll(int schoolRollId, int periodId, String workOrStudyPlace, String schoolRollName, String cardNum,
+			int amcId, String dormitoryNum, Date comeTime, Date leaveTime, int statusId, AMC amc,
+			StudyPeriod studyPeriod, Status status) {
 		this.schoolRollId = schoolRollId;
-		this.majorId = majorId;
 		this.periodId = periodId;
 		this.workOrStudyPlace = workOrStudyPlace;
-		this.studentType = studentType;
-		this.studentNum = studentNum;
-		this.classId = classId;
-		this.academyId = academyId;
+		this.schoolRollName = schoolRollName;
+		this.cardNum = cardNum;
+		this.amcId = amcId;
 		this.dormitoryNum = dormitoryNum;
-		this.studentCardNum = studentCardNum;
 		this.comeTime = comeTime;
 		this.leaveTime = leaveTime;
 		this.statusId = statusId;
-		this.major = major;
+		this.amc = amc;
 		this.studyPeriod = studyPeriod;
-		CClass = cClass;
-		this.academy = academy;
 		this.status = status;
 	}
+
 
 	public int getSchoolRollId() {
 		return schoolRollId;
 	}
+
+
 	public void setSchoolRollId(int schoolRollId) {
 		this.schoolRollId = schoolRollId;
 	}
-	public int getMajorId() {
-		return majorId;
-	}
-	public void setMajorId(int majorId) {
-		this.majorId = majorId;
-	}
+
+
 	public int getPeriodId() {
 		return periodId;
 	}
+
+
 	public void setPeriodId(int periodId) {
 		this.periodId = periodId;
 	}
+
+
 	public String getWorkOrStudyPlace() {
 		return workOrStudyPlace;
 	}
+
+
 	public void setWorkOrStudyPlace(String workOrStudyPlace) {
 		this.workOrStudyPlace = workOrStudyPlace;
 	}
-	public String getStudentType() {
-		return studentType;
+
+
+	public String getSchoolRollName() {
+		return schoolRollName;
 	}
-	public void setStudentType(String studentType) {
-		this.studentType = studentType;
+
+
+	public void setSchoolRollName(String schoolRollName) {
+		this.schoolRollName = schoolRollName;
 	}
-	public String getStudentNum() {
-		return studentNum;
+
+
+	public String getCardNum() {
+		return cardNum;
 	}
-	public void setStudentNum(String studentNum) {
-		this.studentNum = studentNum;
+
+
+	public void setCardNum(String cardNum) {
+		this.cardNum = cardNum;
 	}
-	public int getClassId() {
-		return classId;
+
+
+	public int getAmcId() {
+		return amcId;
 	}
-	public void setClassId(int classId) {
-		this.classId = classId;
+
+
+	public void setAmcId(int amcId) {
+		this.amcId = amcId;
 	}
-	public int getAcademyId() {
-		return academyId;
-	}
-	public void setAcademyId(int academyId) {
-		this.academyId = academyId;
-	}
+
+
 	public String getDormitoryNum() {
 		return dormitoryNum;
 	}
+
+
 	public void setDormitoryNum(String dormitoryNum) {
 		this.dormitoryNum = dormitoryNum;
 	}
-	public String getStudentCardNum() {
-		return studentCardNum;
-	}
-	public void setStudentCardNum(String studentCardNum) {
-		this.studentCardNum = studentCardNum;
-	}
+
+
 	public Date getComeTime() {
 		return comeTime;
 	}
+
+
 	public void setComeTime(Date comeTime) {
 		this.comeTime = comeTime;
 	}
+
+
 	public Date getLeaveTime() {
 		return leaveTime;
 	}
+
+
 	public void setLeaveTime(Date leaveTime) {
 		this.leaveTime = leaveTime;
 	}
+
+
 	public int getStatusId() {
 		return statusId;
 	}
+
+
 	public void setStatusId(int statusId) {
 		this.statusId = statusId;
 	}
-	
-	
-	public Major getMajor() {
-		return major;
+
+
+	public AMC getAmc() {
+		return amc;
 	}
 
-	public void setMajor(Major major) {
-		this.major = major;
+
+	public void setAmc(AMC amc) {
+		this.amc = amc;
 	}
+
 
 	public StudyPeriod getStudyPeriod() {
 		return studyPeriod;
 	}
 
+
 	public void setStudyPeriod(StudyPeriod studyPeriod) {
 		this.studyPeriod = studyPeriod;
 	}
 
-	public Class getCClass() {
-		return CClass;
-	}
-
-	public void setCClass(Class cClass) {
-		CClass = cClass;
-	}
-
-	public Academy getAcademy() {
-		return academy;
-	}
-
-	public void setAcademy(Academy academy) {
-		this.academy = academy;
-	}
 
 	public Status getStatus() {
 		return status;
 	}
 
+
 	public void setStatus(Status status) {
 		this.status = status;
 	}
 
+
 	@Override
 	public String toString() {
-		return "SchoolRoll [schoolRollId=" + schoolRollId + ", majorId=" + majorId + ", periodId=" + periodId
-				+ ", workOrStudyPlace=" + workOrStudyPlace + ", studentType=" + studentType + ", studentNum="
-				+ studentNum + ", classId=" + classId + ", academyId=" + academyId + ", dormitoryNum=" + dormitoryNum
-				+ ", studentCardNum=" + studentCardNum + ", comeTime=" + comeTime + ", leaveTime=" + leaveTime
-				+ ", statusId=" + statusId + ", major=" + major + ", studyPeriod=" + studyPeriod + ", CClass=" + CClass
-				+ ", academy=" + academy + ", status=" + status + "]";
+		return "SchoolRoll [schoolRollId=" + schoolRollId + ", periodId=" + periodId + ", workOrStudyPlace="
+				+ workOrStudyPlace + ", schoolRollName=" + schoolRollName + ", cardNum=" + cardNum + ", amcId=" + amcId
+				+ ", dormitoryNum=" + dormitoryNum + ", comeTime=" + comeTime + ", leaveTime=" + leaveTime
+				+ ", statusId=" + statusId + ", amc=" + amc + ", studyPeriod=" + studyPeriod + ", status=" + status
+				+ "]";
 	}
-	
+
 	
 }

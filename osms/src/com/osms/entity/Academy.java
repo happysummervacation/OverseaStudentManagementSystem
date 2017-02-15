@@ -14,8 +14,8 @@ public class Academy implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private int academyId;//学院ID
-	private String academyName;//学院名称
+	private int academyId=0;//学院ID
+	private String academyName=null;//学院名称
 	
 	public Academy()
 	{

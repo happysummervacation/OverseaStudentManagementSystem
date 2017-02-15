@@ -16,7 +16,7 @@ public class Passport implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private int passportId;//ª§’’ID
+	private int passportId=0;//ª§’’ID
 	private String passportNum=null;//ª§’’∫≈
 	private String passportPage=null;//ª§’’“≥Õº∆¨¡¥Ω”
 	//≈‰÷√list

@@ -5,11 +5,11 @@ import java.util.Date;
 public class LoginBean {
 
 	// 登录用户的id
-	private String loginName;
+	private String loginName=null;
 	// 登录的ip地址
-	private String ip;
+	private String ip=null;
 	// 登录时间
-	private Date loginTime;
+	private Date loginTime=null;
 	
 	
 	public String getLoginName() {

@@ -14,9 +14,9 @@ public class Nationality implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private int nationalityId;//国籍编号
-	private String nationalityChineseName;//国籍中文名称
-	private String nationalityEnglishName;//国家英文名
+	private int nationalityId=0;//国籍编号
+	private String nationalityChineseName=null;//国籍中文名称
+	private String nationalityEnglishName=null;//国家英文名
 	
 	public Nationality()
 	{

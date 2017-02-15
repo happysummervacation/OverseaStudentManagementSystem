@@ -13,8 +13,8 @@ public class NoticeType implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private int noticeTypeId;//通知类别ID
-	private String NoticeTypeName;//通知类别名称
+	private int noticeTypeId=0;//通知类别ID
+	private String NoticeTypeName=null;//通知类别名称
 	
 	public NoticeType()
 	{

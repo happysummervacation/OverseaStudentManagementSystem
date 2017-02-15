@@ -15,22 +15,22 @@ public class Visa implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private int visaId;//签证ID
-	private String registerDeadline;//注册截止时间
-	private String intermediary;//中介
-	private String intermediaryPhone;//中介联系电话
-	private String guaranteeName;//担保人姓名
-	private String guaranteePhone;//担保人姓名
-	private int fundingSourceId;//经费来源ID
-	private int passportId;//护照ID
-	private Date approvalTime;//审批时间
-	private Date visaDueTime;//签证到期时间
+	private int visaId=0;//签证ID
+	private String registerDeadline=null;//注册截止时间
+	private String intermediary=null;//中介
+	private String intermediaryPhone=null;//中介联系电话
+	private String guaranteeName=null;//担保人姓名
+	private String guaranteePhone=null;//担保人姓名
+	private int fundingSourceId=0;//经费来源ID
+	private int passportId=0;//护照ID
+	private Date approvalTime=null;//审批时间
+	private Date visaDueTime=null;//签证到期时间
 	
 	
 	
 	//包含配置类
-	private Passport passport;
-	private FundingSource fundingSource;
+	private Passport passport=null;
+	private FundingSource fundingSource=null;
 	
 	public Visa()
 	{

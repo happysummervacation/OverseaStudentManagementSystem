@@ -14,8 +14,8 @@ public class EducationType implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private int educationId;//学历ID
-	private String educationName;//学历名称
+	private int educationId=0;//学历ID
+	private String educationName=null;//学历名称
 	
 	
 	public EducationType()

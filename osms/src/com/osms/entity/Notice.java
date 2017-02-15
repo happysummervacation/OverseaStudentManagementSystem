@@ -10,21 +10,21 @@ public class Notice implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private int noticeId;//通知ID
-	private String title;//通知标题
-	private String content;//内容
-	private String writer;//写作人姓名
-	private int userId;//写作人Id
-	private int noticeTypeId;//通知类别ID
-	private String downLoadPath;//附件下载链接
-	private Date publishTime;//通知发布时间
-	private int status;//状态
+	private int noticeId=0;//通知ID
+	private String title=null;//通知标题
+	private String content=null;//内容
+	private String writer=null;//写作人姓名
+	private int userId=0;//写作人Id
+	private int noticeTypeId=0;//通知类别ID
+	private String downLoadPath=null;//附件下载链接
+	private Date publishTime=null;//通知发布时间
+	private int status=0;//状态
 	
 	/**
 	 * 包含聚合对象
 	 */
-	private Users user;//用户类对象
-	private NoticeType noticeType;//通知类别配置类对象
+	private Users user=null;//用户类对象
+	private NoticeType noticeType=null;//通知类别配置类对象
 	
 	/**
 	 * 私有变量构造

@@ -14,9 +14,9 @@ public class StudyPeriod implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private int periodId;//学习期限id
-	private Date startTime;//开始时间
-	private Date endTime;//结束时间
+	private int periodId=0;//学习期限id
+	private Date startTime=null;//开始时间
+	private Date endTime=null;//结束时间
 	
 	public StudyPeriod()
 	{

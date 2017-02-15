@@ -14,8 +14,8 @@ public class FundingSource implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private int fundingSourceId;//经费来源ID
-	private String fundingSourceName;//经费来源地名称
+	private int fundingSourceId=0;//经费来源ID
+	private String fundingSourceName=null;//经费来源地名称
 	
 
 	public FundingSource()
