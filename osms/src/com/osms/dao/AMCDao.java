@@ -3,6 +3,7 @@ package com.osms.dao;
 import java.sql.Connection;
 import java.util.List;
 
+
 import com.osms.entity.AMC;
 
 public interface AMCDao {
@@ -30,13 +31,13 @@ public interface AMCDao {
 	public int save(AMC amc, Connection conn);
 	
 	
-	/**
-	 * 通过学院id和专业id查找amc记录id值
-	 * @param amc
-	 * @return
-	 */
-	public int getAmcIdByAcademyIdAndMajorId(AMC amc);
-	
+//	/**
+//	 * 通过学院id和专业id查找amc记录id值
+//	 * @param amc
+//	 * @return
+//	 */
+//	public int getAmcIdByAcademyIdAndMajorId(AMC amc);
+//	
 	/**
 	 * 更新信息
 	 * @param amc
@@ -57,4 +58,12 @@ public interface AMCDao {
 	 * 		并操作Or或操作，写入关键字的组合方式
 	 */
 	public void delete(int amcId, int academyId, int majorId, int classId, String type);
+	
+	
+	/**
+	 * 通过学院id专业id和班级id固定查找数据表amcId
+	 * @param amc
+	 * @return
+	 */
+	public int getAmcIdByAcademyIdAndMajorIdAndClassId(AMC amc);
 }

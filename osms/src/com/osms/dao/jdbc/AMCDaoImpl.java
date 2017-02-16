@@ -81,33 +81,33 @@ public class AMCDaoImpl extends JDBCBase implements AMCDao {
 		return amcId;
 	}
 
-	@Override
-	public int getAmcIdByAcademyIdAndMajorId(AMC amc) {
-		Connection conn=JDBCUtil.getConnection();
-		PreparedStatement ps=null;
-		ResultSet rs=null;
-		String sql="SELECT amcId FROM AMC WHERE academyId=? AND majorId=? AND classId IS NULL";
-		int amcId=-1;
-		Object[] param={
-			amc.getAcademyId(),
-			amc.getMajorId()
-		};
-		try {
-			ps=conn.prepareStatement(sql);
-			rs=query(ps, param);
-			if(rs.next())
-			{
-				amcId=rs.getInt("amcId");
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}finally
-		{
-			JDBCUtil.close(rs, ps, conn);
-		}
-		return amcId;
-	}
+//	@Override
+//	public int getAmcIdByAcademyIdAndMajorId(AMC amc) {
+//		Connection conn=JDBCUtil.getConnection();
+//		PreparedStatement ps=null;
+//		ResultSet rs=null;
+//		String sql="SELECT amcId FROM AMC WHERE academyId=? AND majorId=? AND classId IS NULL";
+//		int amcId=-1;
+//		Object[] param={
+//			amc.getAcademyId(),
+//			amc.getMajorId()
+//		};
+//		try {
+//			ps=conn.prepareStatement(sql);
+//			rs=query(ps, param);
+//			if(rs.next())
+//			{
+//				amcId=rs.getInt("amcId");
+//			}
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}finally
+//		{
+//			JDBCUtil.close(rs, ps, conn);
+//		}
+//		return amcId;
+//	}
 
 	@Override
 	public void update(AMC amc) {
@@ -151,6 +151,43 @@ public class AMCDaoImpl extends JDBCBase implements AMCDao {
 		{
 			e.printStackTrace();
 		}
+	}
+
+
+	@Override
+	public int getAmcIdByAcademyIdAndMajorIdAndClassId(AMC amc) {
+		Connection conn=JDBCUtil.getConnection();
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		StringBuilder sql=new StringBuilder("SELECT amcId FROM AMC WHERE academyId=? AND majorId=?");
+		int amcId=0;
+		ArrayList<Object> parmaAMC=new ArrayList<Object>();
+		parmaAMC.add(amc.getAcademyId());
+		parmaAMC.add(amc.getMajorId());
+		if(amc.getClassId()!=0)
+		{
+			sql.append(" AND classId=?");
+			parmaAMC.add(amc.getClassId());
+		}else
+		{
+			sql.append(" AND classId IS NULL");
+		}
+		
+		try {
+			ps=conn.prepareStatement(sql.toString());
+			rs=query(ps, parmaAMC.toArray());
+			if(rs.next())
+			{
+				amcId=rs.getInt("amcId");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally
+		{
+			JDBCUtil.close(rs, ps, conn);
+		}
+		return amcId;
 	}
 
 

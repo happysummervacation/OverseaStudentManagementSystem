@@ -14,17 +14,16 @@ public class NoticeType implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private int noticeTypeId=0;//通知类别ID
-	private String NoticeTypeName=null;//通知类别名称
+	private String noticeTypeName=null;//通知类别名称
 	
 	public NoticeType()
 	{
 		
 	}
-	
+
 	public NoticeType(int noticeTypeId, String noticeTypeName) {
-	//	super();
 		this.noticeTypeId = noticeTypeId;
-		NoticeTypeName = noticeTypeName;
+		this.noticeTypeName = noticeTypeName;
 	}
 
 	public int getNoticeTypeId() {
@@ -36,16 +35,16 @@ public class NoticeType implements Serializable{
 	}
 
 	public String getNoticeTypeName() {
-		return NoticeTypeName;
+		return noticeTypeName;
 	}
 
 	public void setNoticeTypeName(String noticeTypeName) {
-		NoticeTypeName = noticeTypeName;
+		this.noticeTypeName = noticeTypeName;
 	}
 
 	@Override
 	public String toString() {
-		return "NoticeType [noticeTypeId=" + noticeTypeId + ", NoticeTypeName=" + NoticeTypeName + "]";
+		return "NoticeType [noticeTypeId=" + noticeTypeId + ", noticeTypeName=" + noticeTypeName + "]";
 	}
 	
 	

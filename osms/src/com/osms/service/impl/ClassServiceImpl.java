@@ -26,8 +26,19 @@ public class ClassServiceImpl implements ClassService {
 	public void saveClass(Class cclass, AMC amc) {
 		
 		//获取对应的amcId
-		int amcId=amcDao.getAmcIdByAcademyIdAndMajorId(amc);
-		amc.setAmcId(amcId);
+		int amcId=amcDao.getAmcIdByAcademyIdAndMajorIdAndClassId(amc);
+		if(amcId!=0)
+		{
+			amc.setAmcId(amcId);
+		}else
+		{
+			try {
+				throw new Exception("没有符合条件的学院和专业的记录");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		
 		Connection conn=JDBCUtil.getConnection();
 		try

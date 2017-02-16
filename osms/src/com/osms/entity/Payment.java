@@ -36,9 +36,8 @@ public class Payment implements Serializable{
 		
 	}
 
-
 	/**
-	 * 私有变量构造
+	 * 私有变量
 	 * @param paymentId
 	 * @param userId
 	 * @param paymentTypeId
@@ -57,12 +56,12 @@ public class Payment implements Serializable{
 		this.payTime = payTime;
 		this.isDone = isDone;
 		this.description = description;
-		this.status=status;
+		this.status = status;
 	}
 
 
 	/**
-	 * 聚合对象构造
+	 * 聚合对象
 	 * @param user
 	 * @param paymentType
 	 */
@@ -85,7 +84,6 @@ public class Payment implements Serializable{
 	 * @param status
 	 * @param user
 	 * @param paymentType
-	 * 
 	 */
 	public Payment(int paymentId, int userId, int paymentTypeId, double money, Date payTime, boolean isDone,
 			String description, int status, Users user, PaymentType paymentType) {
@@ -96,7 +94,7 @@ public class Payment implements Serializable{
 		this.payTime = payTime;
 		this.isDone = isDone;
 		this.description = description;
-		this.status=status;
+		this.status = status;
 		this.user = user;
 		this.paymentType = paymentType;
 	}

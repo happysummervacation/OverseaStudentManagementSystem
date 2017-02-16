@@ -26,6 +26,11 @@ public class Notice implements Serializable{
 	private Users user=null;//用户类对象
 	private NoticeType noticeType=null;//通知类别配置类对象
 	
+	public Notice()
+	{
+		
+	}
+	
 	/**
 	 * 私有变量构造
 	 * @param noticeId

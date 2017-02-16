@@ -8,13 +8,20 @@ import com.osms.entity.Academy;
 import com.osms.entity.Class;
 import com.osms.entity.EducationType;
 import com.osms.entity.ForeignIdentity;
+import com.osms.entity.FundingSource;
 import com.osms.entity.Major;
 import com.osms.entity.Nationality;
+import com.osms.entity.Notice;
+import com.osms.entity.NoticeType;
+import com.osms.entity.Passport;
+import com.osms.entity.Payment;
+import com.osms.entity.PaymentType;
 import com.osms.entity.SchoolRoll;
 import com.osms.entity.Status;
 import com.osms.entity.StudyPeriod;
 import com.osms.entity.UserType;
 import com.osms.entity.Users;
+import com.osms.entity.Visa;
 
 public class Packager {
 
@@ -215,5 +222,127 @@ public class Packager {
 		userType.setTypeId(rs.getInt("typeId"));
 		userType.setTypeName(rs.getString("typeName"));
 		return userType;
+	}
+	
+	
+	/**
+	 * 打包经费来源配置表数据
+	 * @param rs
+	 * @return
+	 * @throws SQLException
+	 */
+	public static FundingSource PAckagerFundingSource(ResultSet rs) throws SQLException
+	{
+		FundingSource fundingSource=new FundingSource();
+		fundingSource.setFundingSourceId(rs.getInt("fundingSourceId"));
+		fundingSource.setFundingSourceName(rs.getString("fundingSourceName"));
+		return fundingSource;
+	}
+	
+	/**
+	 * 打包护照表数据
+	 * @param rs
+	 * @return
+	 * @throws SQLException
+	 */
+	public static Passport PackagerPassport(ResultSet rs) throws SQLException
+	{
+		Passport passport=new Passport();
+		passport.setPassportId(rs.getInt("passportId"));
+		passport.setPassportNum(rs.getString("passportNum"));
+		passport.setPassportPage(rs.getString("passportPage"));
+		return passport;
+	}
+	
+	/**
+	 * 打包签证表数据
+	 * @param rs
+	 * @return
+	 * @throws SQLException
+	 */
+	public static Visa PackagerVisa(ResultSet rs) throws SQLException
+	{
+		Visa visa=new Visa();
+		visa.setVisaId(rs.getInt("visaId"));
+		visa.setRegisterDeadline(rs.getDate("registerDeadline"));
+		visa.setIntermediary(rs.getString("intermediary"));
+		visa.setIntermediaryPhone(rs.getString("intermediaryPhone"));
+		visa.setGuaranteeName(rs.getString("guaranteeName"));
+		visa.setGuaranteePhone(rs.getString("guaranteePhone"));
+		visa.setFundingSourceId(rs.getInt("fundingSourceId"));
+		visa.setPassportId(rs.getInt("passportId"));
+		visa.setApprovalTime(rs.getDate("approvalTime"));
+		visa.setVisaDueTime(rs.getDate("visaDueTime"));
+		return visa;
+	}
+	
+	
+	/**
+	 * 打包通知配置表数据
+	 * @param rs
+	 * @return
+	 * @throws SQLException
+	 */
+	public static NoticeType PackagerNoticeType(ResultSet rs) throws SQLException
+	{
+		NoticeType noticeType=new NoticeType();
+		noticeType.setNoticeTypeId(rs.getInt("noticeTypeId"));
+		noticeType.setNoticeTypeName(rs.getString("noticeTypeName"));
+		return noticeType;
+	}
+	
+	/**
+	 * 打包通知表数据
+	 * @param rs
+	 * @return
+	 * @throws SQLException
+	 */
+	public static Notice PackagerNotice(ResultSet rs) throws SQLException
+	{
+		Notice notice=new Notice();
+		notice.setNoticeId(rs.getInt("noticeId"));
+		notice.setTitle(rs.getString("title"));
+		notice.setContent(rs.getString("content"));
+		notice.setWriter(rs.getString("writer"));
+		notice.setUserId(rs.getInt("userId"));
+		notice.setNoticeTypeId(rs.getInt("noticeTypeId"));
+		notice.setDownLoadPath(rs.getString("downLoadPath"));
+		notice.setPublishTime(rs.getDate("publishTime"));
+		notice.setStatus(rs.getInt("status"));
+		return notice;
+	}
+	
+	/**
+	 * 打包费用类型表数据
+	 * @param rs
+	 * @return
+	 * @throws SQLException
+	 */
+	public static PaymentType PackagerPaymentType(ResultSet rs) throws SQLException
+	{
+		PaymentType paymentType=new PaymentType();
+		paymentType.setPaymentTypeId(rs.getInt("paymentTypeId"));
+		paymentType.setPaymentTypeName(rs.getString("paymentTypeName"));
+		return paymentType;
+	}
+	
+	/**
+	 * 打包费用表数据
+	 * @param rs
+	 * @return
+	 * @throws SQLException
+	 */
+	public static Payment PackagerPayment(ResultSet rs) throws SQLException
+	{
+		Payment payment =new Payment();
+		payment.setPaymentId(rs.getInt("paymentId"));
+		payment.setUserId(rs.getInt("userId"));
+		payment.setPaymentTypeId(rs.getInt("paymentTypeId"));
+		payment.setMoney(rs.getDouble("money"));
+		payment.setPayTime(rs.getDate("payTime"));
+		payment.setDone(rs.getBoolean("isDone"));
+		payment.setDescription(rs.getString("description"));
+		payment.setStatus(rs.getInt("status"));
+		return payment;
 	}
 }
